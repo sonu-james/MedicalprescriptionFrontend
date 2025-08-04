@@ -6,6 +6,7 @@ import { AuthProvider, useAuth } from './hooks/useAuth';
 import Login from './components/Auth/Login';
 import Dashboard from './components/Layout/Dashboard'; // Adjust path as needed
 import 'react-toastify/dist/ReactToastify.css';
+import HomePage from './components/HomePage/HomePage';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -26,6 +27,7 @@ const AppRoutes: React.FC = () => {
   return (
     <Router>
       <Routes>
+         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route 
           path="/dashboard" 

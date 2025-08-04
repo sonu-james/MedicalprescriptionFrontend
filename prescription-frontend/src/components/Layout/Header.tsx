@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth } from '../../hooks/useAuth';
 
 const Header: React.FC = () => {
-  const { authState, signOut } = useAuth();
+  const { user, signOut } = useAuth();
 
   const handleSignOut = async () => {
     try {
@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center py-6">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">🏥 Prescription System</h1>
-            <p className="text-sm text-gray-600">Welcome, Dr. {authState.user?.name}</p>
+            <p className="text-sm text-gray-600">Welcome, Dr. {user?.name}</p>
           </div>
           <button
             onClick={handleSignOut}

@@ -19,7 +19,7 @@ const MedicineSearch: React.FC<MedicineSearchProps> = ({
   const [suggestions, setSuggestions] = useState<Medicine[]>([]);
   const [loading, setLoading] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  
+
   // Fix: Use number for browser environment
   const debounceRef = useRef<number | undefined>(undefined);
 
@@ -35,8 +35,8 @@ const MedicineSearch: React.FC<MedicineSearchProps> = ({
 
     setLoading(true);
     try {
-      const medicines = await ApiService.searchMedicines(searchQuery);
-      setSuggestions(medicines);
+      const res = await ApiService.searchMedicines(searchQuery);
+      setSuggestions(res.medicines);
       setShowSuggestions(true);
     } catch (error) {
       console.error('Error searching medicines:', error);
@@ -102,7 +102,7 @@ const MedicineSearch: React.FC<MedicineSearchProps> = ({
         placeholder={placeholder}
         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
       />
-      
+
       {loading && (
         <div className="absolute right-3 top-3">
           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-500"></div>
