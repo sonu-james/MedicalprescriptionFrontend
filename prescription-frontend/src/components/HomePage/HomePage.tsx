@@ -23,7 +23,7 @@ const HomePage = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img src="/logo.png" alt="MediScript Logo" className="h-10 w-auto" />
-            <span className="text-blue-600 font-bold text-2xl">MediScript</span>
+            <span className="text-blue-600 font-bold text-2xl">DocMatrix</span>
           </Link>
 
           {/* Desktop Menu */}
